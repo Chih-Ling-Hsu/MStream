@@ -25,7 +25,7 @@ class MStream:
 
     def runMStream(self, sampleNo, outputPath):
         ParametersStr = ".K_" + str(self.K) + ".iterNum_" + str(self.iterNum) + \
-                        ".SampleNum_" + str(self.sampleNum) + "alpha_" + str(round(self.alpha, 3)) + \
+                        ".SampleNum_" + str(self.sampleNum) + ".alpha_" + str(round(self.alpha, 3)) + \
                         ".beta_" + str(round(self.beta, 3)) + ".BatchNum_" + str(self.AllBatchNum) + ".BatchSaved_" + str(self.MaxBatch)
         model = Model(self.K, self.MaxBatch, self.V, self.iterNum, self.alpha, self.beta, self.dataset,
                       ParametersStr, sampleNo, self.wordsInTopicNum, self.dataDir + self.timefil)

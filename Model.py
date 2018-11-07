@@ -336,7 +336,7 @@ class Model:
                 self.n_zv.pop(cluster)
 
     def output(self, documentSet, outputPath, wordList, batchNum):
-        outputDir = os.path.join(outputPath, self.dataset + self.ParametersStr + "Batch" + str(batchNum)) + "/"
+        outputDir = os.path.join(outputPath, self.dataset + self.ParametersStr + ".Batch_" + str(batchNum)) + "/"
         try:
             isExists = os.path.exists(outputDir)
             if not isExists:
@@ -379,7 +379,7 @@ class Model:
             m += 1
 
     def outputPhiWordsInTopics(self, outputDir, wordList, Cnt):
-        outputfiledir = outputDir + str(self.dataset) + "SampleNo" + str(self.sampleNo) + "PhiWordsInTopics.txt"
+        outputfiledir = outputDir + str(self.dataset) + ".SampleNo_" + str(self.sampleNo) + ".PhiWordsInTopics.txt"
         writer = open(outputfiledir, 'w')
         for k in range(self.K):
             rankList = []
@@ -394,7 +394,7 @@ class Model:
         writer.close()
 
     def outputSizeOfEachCluster(self, outputDir, documentSet):
-        outputfile = outputDir + str(self.dataset) + "SampleNo" + str(self.sampleNo) + "SizeOfEachCluster.txt"
+        outputfile = outputDir + str(self.dataset) + ".SampleNo_" + str(self.sampleNo) + ".SizeOfEachCluster.txt"
         writer = open(outputfile, 'w')
         topicCountIntList = []
         for cluster in range(self.K):
@@ -412,7 +412,7 @@ class Model:
         writer.close()
 
     def outputClusteringResult(self, outputDir, documentSet):
-        outputPath = outputDir + str(self.dataset) + "SampleNo" + str(self.sampleNo) + "ClusteringResult" + ".txt"
+        outputPath = outputDir + str(self.dataset) + ".SampleNo_" + str(self.sampleNo) + ".ClusteringResult" + ".txt"
         writer = open(outputPath, 'w')
         for d in range(self.startDoc, self.currentDoc):
             documentID = documentSet.documents[d].documentID
