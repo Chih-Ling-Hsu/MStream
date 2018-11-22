@@ -80,7 +80,8 @@ class Model:
         self.word_current = {} # Store word-IDs' list of each batch
 
         # Get batchNum2tweetID by AllBatchNum
-        self.getAveBatch(documentSet, AllBatchNum)
+        if len(self.batchNum2tweetID) == 0:
+            self.getAveBatch(documentSet, AllBatchNum)
         print("batchNum2tweetID is ", self.batchNum2tweetID)
 
         while self.currentDoc < self.D_All:
